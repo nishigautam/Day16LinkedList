@@ -8,7 +8,7 @@ public class Main {
         linkedList.append(a);
         linkedList.append(c);
         linkedList.insertInBetween(b,a);
-        linkedList.pop();
+        linkedList.popLastElement();
         linkedList.display();
     }
 }

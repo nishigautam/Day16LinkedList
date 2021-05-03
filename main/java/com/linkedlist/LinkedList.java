@@ -78,6 +78,18 @@ public class LinkedList<T> {
         node.setNext(null);
     }
 
+    /**
+     * uc6 : ability to delete the last element from the given sequence.
+     */
+    public void popLastElement() {
+        Node<T> node = head;
+        while(node.getNext() != tail) {
+            node = node.getNext();
+        }
+        node.setNext(null);
+        tail = node;
+    }
+
     public void display() {
         Node<T> node = head;
         while (node != null) {
