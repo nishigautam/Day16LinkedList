@@ -90,6 +90,20 @@ public class LinkedList<T> {
         tail = node;
     }
 
+    /**
+     * uc7: ability to search LL to find node with certain value
+     */
+    public boolean findNode(T value) {
+        Node<T> node = head;
+        while(node != null) {
+            if(node.getData() == value)
+                return true;
+            node = node.getNext();
+        }
+        return false;
+    }
+
+
     public void display() {
         Node<T> node = head;
         while (node != null) {
