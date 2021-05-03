@@ -120,6 +120,26 @@ public class LinkedList<T> {
         newNode.setNext(temp);
     }
 
+    /**
+     * uc9: ability to delete element from linked list sequence
+     */
+    public void deleteNode(T key) {
+        Node<T> node = head;
+        Node<T> prev = null;
+        while(node != null) {
+            if(node.getData() == key)
+                break;
+            prev = node;
+            node = node.getNext();
+        }
+        if(prev == null) {
+            head = head.getNext();
+        } else {
+            prev.setNext(node.getNext());
+            node.setNext(null);
+        }
+    }
+
     public void display() {
         Node<T> node = head;
         while (node != null) {

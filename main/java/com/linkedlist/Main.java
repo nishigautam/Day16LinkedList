@@ -9,6 +9,7 @@ public class Main {
         linkedList.append(c);
         linkedList.append(d);
         linkedList.insertNumberAfterGivenNodeKey(b,a);
+        linkedList.deleteNode(b);
         linkedList.display();
     }
 }
