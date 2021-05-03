@@ -37,6 +37,20 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * uc3 :
+     */
+    public void append(T data) {
+        Node<T> newNode = new Node<T>(data);
+        if (head == null && tail == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.setNext(newNode);
+            tail = newNode;
+        }
+    }
+
 
     public void display() {
         Node<T> node = head;
