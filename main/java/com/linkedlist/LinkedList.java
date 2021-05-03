@@ -69,6 +69,15 @@ public class LinkedList<T> {
         newNode.setNext(temp);
     }
 
+    /**
+     * uc5 : ability to delete the first element
+     */
+    public void pop() {
+        Node<T> node = head;
+        head = node.getNext();
+        node.setNext(null);
+    }
+
     public void display() {
         Node<T> node = head;
         while (node != null) {
