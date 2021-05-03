@@ -1,10 +1,10 @@
 package com.linkedlist;
 
-public class LinkedList<T> {
+public class sortLinkedList<T> {
     Node<T> head;
     Node<T> tail;
 
-    public LinkedList() {
+    public sortLinkedList() {
         this.head = null;
         this.tail = null;
     }
@@ -138,6 +138,42 @@ public class LinkedList<T> {
             prev.setNext(node.getNext());
             node.setNext(null);
         }
+    }
+
+    /**
+     * uc10:
+     */
+    public void addLinkedList(T data) {
+        Node<T> newNode = new Node<T>(data);
+        if(head == null && tail == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            Node<T> temp = null, prev = null;
+            temp = head;
+            while(temp != null) {
+                if(sort(temp,newNode) > 0) {
+                    break;
+                }
+                prev = temp;
+                temp = temp.getNext();
+            }
+            if(temp == head) {
+                newNode.setNext(temp);
+                head = newNode;
+            }
+            else if(temp == null) {
+                prev.setNext(newNode);
+                tail = newNode;
+            } else {
+                prev.setNext(newNode);
+                newNode.setNext(temp);
+            }
+        }
+    }
+
+    private int sort(Node<T> temp, Node<T> newNode) {
+        return ((Comparable) temp.getData()).compareTo(newNode.getData());
     }
 
     public void display() {
