@@ -103,6 +103,22 @@ public class LinkedList<T> {
         return false;
     }
 
+    /**
+     * uc8: ability to insert number after given value to the LL sequence
+     */
+    public void insertNumberAfterGivenNodeKey(T newKey, T key) {
+        Node<T> node = head;
+        Node<T> temp;
+        Node<T> newNode = new Node<T>(newKey);
+        while (node != null) {
+            if (node.getData() == key)
+                break;
+            node = node.getNext();
+        }
+        temp = node.getNext();
+        node.setNext(newNode);
+        newNode.setNext(temp);
+    }
 
     public void display() {
         Node<T> node = head;
